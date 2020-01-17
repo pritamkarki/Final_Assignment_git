@@ -1,7 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace ASE_Assignment
+﻿namespace ASE_Assignment
 {
     partial class Form1
     {
@@ -63,7 +60,7 @@ namespace ASE_Assignment
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1290, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1290, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,7 +71,7 @@ namespace ASE_Assignment
             this.loadToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // saveToolStripMenuItem
@@ -103,7 +100,7 @@ namespace ASE_Assignment
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.commandLIstToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // commandLIstToolStripMenuItem
@@ -253,11 +250,12 @@ namespace ASE_Assignment
             // 
             // MultipleCommand
             // 
-            this.MultipleCommand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.MultipleCommand.Location = new System.Drawing.Point(934, 665);
+            this.MultipleCommand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MultipleCommand.Location = new System.Drawing.Point(948, 592);
             this.MultipleCommand.Multiline = true;
             this.MultipleCommand.Name = "MultipleCommand";
-            this.MultipleCommand.Size = new System.Drawing.Size(330, 146);
+            this.MultipleCommand.Size = new System.Drawing.Size(316, 202);
             this.MultipleCommand.TabIndex = 15;
             // 
             // Form1
@@ -290,76 +288,6 @@ namespace ASE_Assignment
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void commandLIstToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Panel_Paint(object sender, PaintEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void LOAD_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion
