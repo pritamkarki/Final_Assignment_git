@@ -9,7 +9,7 @@ namespace ASE_Assignment
 {
     interface Shape
     {
-        void DrawShape(string[] res, Graphics graph, int x_axis, int y_axis);
+        void DrawShape(string[] res, Graphics g, int k, int l, int radius, int width, int height);
     }
 }
 

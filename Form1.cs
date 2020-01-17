@@ -17,9 +17,17 @@ namespace ASE_Assignment
 
     public partial class Form1 : Form
     {
+        //declaring variable
+        int x = 0, y = 0, radius = 0, d = 0, e, f;
+       int  width = 0, height = 0;
         int x_axis = 0, y_axis = 0;
-        Graphics graph;
 
+        Graphics graph;
+        
+        int c = 0;
+
+        int a = 0, b = 0, xTranslate = 0, yTranslate = 0;
+        string textOrder;
         public Form1()
         {
 
@@ -130,19 +138,19 @@ namespace ASE_Assignment
                 {
                     ShapeFactory s1 = new ShapeFactory();
                     Shape sh = s1.getShape(result[0]);
-                    sh.DrawShape(result, graph, x_axis, y_axis);
+                    sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
                 }
                 if (result[0] == "triangle")
                 {
                     ShapeFactory t1 = new ShapeFactory();
                     Shape sh = t1.getShape(result[0]);
-                    sh.DrawShape(result, graph, x_axis, y_axis);
+                    sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
                 }
                 if (result[0] == "circle")
                 {
                     ShapeFactory c1 = new ShapeFactory();
                     Shape sh = c1.getShape(result[0]);
-                    sh.DrawShape(result, graph, x_axis, y_axis);
+                    sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
                 }
             }
             catch (IndexOutOfRangeException)
@@ -192,19 +200,19 @@ namespace ASE_Assignment
                         {
                             ShapeFactory s1 = new ShapeFactory();
                             Shape sh = s1.getShape(result[0]);
-                            sh.DrawShape(result, graph, x_axis, y_axis);
+                            sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
                         }
                         else if (result[0] == "triangle")
                         {
                             ShapeFactory t1 = new ShapeFactory();
                             Shape sh = t1.getShape(result[0]);
-                            sh.DrawShape(result, graph, x_axis, y_axis);
+                            sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
                         }
                         else if (result[0] == "circle")
                         {
                             ShapeFactory c1 = new ShapeFactory();
                             Shape sh = c1.getShape(result[0]);
-                            sh.DrawShape(result, graph, x_axis, y_axis);
+                            sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
                         }
                     }
                     catch (IndexOutOfRangeException)
@@ -237,5 +245,179 @@ namespace ASE_Assignment
             x_axis = 0;
             y_axis = 0;
         }
+
+        public void getShape(string[]result)
+        {
+            //variables
+            if (result[0] == "radius" && result[1] == "=")
+            {
+                radiusvariable(result);
+
+            }
+            else if (result[0] == "radius" && result[1] == "+")
+            {
+                radiusadd(result);
+
+            }
+
+            else if (result[0] == "width" && result[1] == "=")
+            {
+                widthvariable(result);
+               
+               
+            }
+            else if (result[0] == "height" && result[1] == "=")
+            {
+                heightvariable(result);
+               
+               
+            }
+            
+            
+            else if (result[0] == "width" && result[1] == "+")
+            {
+                widthadd(result);
+            }
+            else if (result[0] == "height" && result[1] == "+")
+            {
+                heightadd(result); 
+            }
+
+
+
+            // Shapes
+            else if (result[0] == "circle")
+            {
+                circle(result);
+            }
+           
+            else if (result[0] == "square")
+            {
+                square(result);
+            }
+            else if (result[0] == "moveTo")
+            {
+                moveto(result);
+            }
+            else if (result[0] == "drawTo")
+            {
+                drawto(result);
+            }
+            else if (result[0] == "transform")
+            {
+                transform(result);
+            }
+            if (result[0] == "rectangle")
+            {
+                rectangle(result);
+            }
+
+            
+        }
+
+        private void radiusadd(string[] result)
+        {
+
+            radius = radius + Convert.ToInt32(result[2]);
+            MessageBox.Show(radius + "");
+
+
+        }
+        private void heightvariable(string[] result)
+        {
+            height = Convert.ToInt32(result[2]);
+        }
+        private void heightadd(string[] result)
+        {
+            height = Convert.ToInt32(result[2]);
+        }
+        private void widthvariable(string[] result)
+        {
+            width = Convert.ToInt32(result[2]);
+        }
+        private void widthadd(string[] result)
+        {
+            width = Convert.ToInt32(result[2]);
+        }
+        private void radiusvariable(string[] result)
+        {
+            radius = Convert.ToInt32(result[2]);
+            MessageBox.Show(radius + "");
+        }
+        private void circle(string[] result)
+        {
+            ShapeFactory c1 = new ShapeFactory();
+            Shape sh = c1.getShape(result[0]);
+            sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
+        }
+        
+
+     
+
+        private void moveto(string[] result)
+        {
+            int x_axis1 = Convert.ToInt32(result[1]);
+            int y_axis1 = Convert.ToInt32(result[2]);
+            x_axis = x_axis1;
+            y_axis = y_axis1;
+        }
+
+        private void triangle(string[] result)
+        {
+            ShapeFactory t1 = new ShapeFactory();
+            Shape sh = t1.getShape(result[0]);
+            sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
+        }
+
+        private void square(string[] result)
+        {
+           
+            ShapeFactory c1 = new ShapeFactory();
+            Shape sh = c1.getShape(result[0]);
+            sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
+        }
+        private void drawto(string[] result)
+        {
+            if (result[1].Equals("a") && result[2].Equals("b"))
+            {
+                e = 0;
+                f = 50;
+            }
+            else
+            {
+                e = Convert.ToInt32(result[1]);
+                f = Convert.ToInt32(result[2]);
+            }
+            Pen pen = new Pen(Color.Bisque, 3);
+            graph.DrawLine(pen, x_axis, y_axis, e, f);
+        }
+        private void transform(string[] result)
+        {
+           
+            if (result[1].Equals("xpoint") && result[2].Equals("ypoint"))
+            {
+                x_axis = 30;
+                y_axis = 40;
+            }
+            else
+            {
+                x_axis = Convert.ToInt32(result[1]);
+                y_axis = Convert.ToInt32(result[2]);
+            }
+            graph.TranslateTransform(x, y);
+            MessageBox.Show("Transform :");
+        }
+
+     
+        private void rectangle(string[] result)
+        {
+            ShapeFactory s1 = new ShapeFactory();
+            Shape sh = s1.getShape(result[0]);
+            sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
+        }
+
+
+
+
     }
 }
