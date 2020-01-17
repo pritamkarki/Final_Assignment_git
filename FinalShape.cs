@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ASE_Assignment
 {
-    interface Shape
+    interface FinalShape
     {
-        void DrawShape(string[] res, Graphics g, int k, int l, int radius, int width, int height);
+        void DrawShape(string[] result, Graphics graph, int x_axis, int y_axis, int radius,int width,int height);
     }
 }
 

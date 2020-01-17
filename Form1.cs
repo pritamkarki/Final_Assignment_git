@@ -118,6 +118,10 @@ namespace ASE_Assignment
                 saveStream.Dispose();
             }
         }
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -137,19 +141,19 @@ namespace ASE_Assignment
                 if (result[0] == "rectangle")
                 {
                     ShapeFactory s1 = new ShapeFactory();
-                    Shape sh = s1.getShape(result[0]);
+                    FinalShape sh = s1.getShape(result[0]);
                     sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
                 }
                 if (result[0] == "triangle")
                 {
                     ShapeFactory t1 = new ShapeFactory();
-                    Shape sh = t1.getShape(result[0]);
+                    FinalShape sh = t1.getShape(result[0]);
                     sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
                 }
                 if (result[0] == "circle")
                 {
                     ShapeFactory c1 = new ShapeFactory();
-                    Shape sh = c1.getShape(result[0]);
+                    FinalShape sh = c1.getShape(result[0]);
                     sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
                 }
             }
@@ -174,51 +178,8 @@ namespace ASE_Assignment
                     CodeVallidation v = new CodeVallidation();
 
                     String[] result = v.valid(arrayOrder[i]);
-
-                    try
-                    {
-                        if (result[0] == "loop")
-                        {
-                            int a = Convert.ToInt32(result[1]);
-                            for (int j = 0; j <= Convert.ToInt32(result[1]); j++)
-                            {
-                                MessageBox.Show("aaaaaaa1");
-                                if (result[0] == "moveTo")
-                                {
-                                    MessageBox.Show("aaaaaaa");
-                                }
-                            }
-                        }
-                        if (result[0] == "moveTo")
-                        {
-                            int x_axis1 = Convert.ToInt32(result[1]);
-                            int y_axis1 = Convert.ToInt32(result[2]);
-                            x_axis = x_axis1;
-                            y_axis = y_axis1;
-                        }
-                        else if (result[0] == "rectangle")
-                        {
-                            ShapeFactory s1 = new ShapeFactory();
-                            Shape sh = s1.getShape(result[0]);
-                            sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
-                        }
-                        else if (result[0] == "triangle")
-                        {
-                            ShapeFactory t1 = new ShapeFactory();
-                            Shape sh = t1.getShape(result[0]);
-                            sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
-                        }
-                        else if (result[0] == "circle")
-                        {
-                            ShapeFactory c1 = new ShapeFactory();
-                            Shape sh = c1.getShape(result[0]);
-                            sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
-                        }
-                    }
-                    catch (IndexOutOfRangeException)
-                    {
-                        //MessageBox.Show("Invalid Command");
-                    }
+                    getShape(result);
+                    
                 }
             }
         }
@@ -286,14 +247,15 @@ namespace ASE_Assignment
 
 
             // Shapes
-            else if (result[0] == "circle")
+            if (result[0] == "circle")
             {
                 circle(result);
             }
-           
+
             else if (result[0] == "square")
             {
-                square(result);
+                MessageBox.Show("1");
+                Square(result);
             }
             else if (result[0] == "moveTo")
             {
@@ -331,6 +293,9 @@ namespace ASE_Assignment
         {
             height = Convert.ToInt32(result[2]);
         }
+
+     
+
         private void widthvariable(string[] result)
         {
             width = Convert.ToInt32(result[2]);
@@ -346,8 +311,9 @@ namespace ASE_Assignment
         }
         private void circle(string[] result)
         {
+            MessageBox.Show("circle");
             ShapeFactory c1 = new ShapeFactory();
-            Shape sh = c1.getShape(result[0]);
+            FinalShape sh = c1.getShape(result[0]);
             sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
         }
         
@@ -365,15 +331,15 @@ namespace ASE_Assignment
         private void triangle(string[] result)
         {
             ShapeFactory t1 = new ShapeFactory();
-            Shape sh = t1.getShape(result[0]);
+            FinalShape sh = t1.getShape(result[0]);
             sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
         }
 
-        private void square(string[] result)
+        private void Square(string[] result)
         {
-           
+            MessageBox.Show("2");
             ShapeFactory c1 = new ShapeFactory();
-            Shape sh = c1.getShape(result[0]);
+            FinalShape sh = c1.getShape(result[0]);
             sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
         }
         private void drawto(string[] result)
@@ -412,7 +378,7 @@ namespace ASE_Assignment
         private void rectangle(string[] result)
         {
             ShapeFactory s1 = new ShapeFactory();
-            Shape sh = s1.getShape(result[0]);
+            FinalShape sh = s1.getShape(result[0]);
             sh.DrawShape(result, graph, x_axis, y_axis, radius, width, height);
         }
 

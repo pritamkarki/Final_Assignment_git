@@ -8,7 +8,7 @@ namespace ASE_Assignment
 {
     class ShapeFactory
     {
-        public Shape getShape(string value)
+        public FinalShape getShape(string value)
         {
             if (value == "rectangle")
             {
@@ -21,6 +21,10 @@ namespace ASE_Assignment
             else if (value == "circle")
             {
                 return new Circle();
+            }
+            else if (value == "square")
+            {
+                return new Square();
             }
             return null;
         }

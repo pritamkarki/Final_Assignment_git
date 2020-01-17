@@ -6,18 +6,20 @@ using System.Text;
 using System.Threading.Tasks;
 namespace ASE_Assignment
 {
-    class Circle : Shape
+    class Circle : FinalShape
     {
-        public void DrawShape(string[] res, Graphics graph, int x_axis, int y_axis)
+        
+        public void DrawShape(string[] result, Graphics graph, int x_axis, int y_axis, int radius,int width,int height)
         {
-            int x_axis1 = Convert.ToInt32(res[1]);
-            int y_axis1 = Convert.ToInt32(res[1]);
+          
+            
+                int xaxis = Convert.ToInt32(result[1]);
+                int yaxis = Convert.ToInt32(result[1]);
+            
             Pen p = new Pen(Color.Red, 4);
-            graph.DrawEllipse(p, x_axis, y_axis, x_axis1, y_axis1);
+            graph.DrawEllipse(p, x_axis, y_axis, xaxis, yaxis);
         }
+
+        
     }
 }
-
-
-
-

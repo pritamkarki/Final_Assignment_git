@@ -7,23 +7,23 @@ using System.Threading.Tasks;
 
 namespace ASE_Assignment
 {
-    class Triangle : Shape
+    class Triangle : FinalShape
     {
 
-        public void DrawShape(string[] res, Graphics g, int k, int l)
+        public void DrawShape(string[] result, Graphics graph, int x_axis, int y_axis, int radius, int width, int height)
         {
             Pen p = new Pen(Color.Red, 4);
-            if (k <= 50 || l <= 50)
+            if (x_axis <= 50 || y_axis <= 50)
             {
                 Random r = new Random();
-                k = r.Next(50, 300);
-                l = r.Next(50, 300);
+                x_axis = r.Next(50, 300);
+                y_axis = r.Next(50, 300);
             }
             Point[] points = new Point[3];
-            points[0] = new Point(k, Convert.ToInt32(res[1]));
-            points[1] = new Point(l, Convert.ToInt32(res[2]));
-            points[2] = new Point(k, Convert.ToInt32(res[3]));
-            g.DrawPolygon(p, points);
+            points[0] = new Point(x_axis, Convert.ToInt32(result[1]));
+            points[1] = new Point(y_axis, Convert.ToInt32(result[2]));
+            points[2] = new Point(x_axis, Convert.ToInt32(result[3]));
+            graph.DrawPolygon(p, points);
         }
     }
 }
