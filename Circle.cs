@@ -8,14 +8,21 @@ namespace ASE_Assignment
 {
     class Circle : FinalShape
     {
-        
+        int xaxis = 0, yaxis = 0;
         public void DrawShape(string[] result, Graphics graph, int x_axis, int y_axis, int radius,int width,int height)
         {
-          
-            
-                int xaxis = Convert.ToInt32(result[1]);
-                int yaxis = Convert.ToInt32(result[1]);
-            
+            if (radius != 0)
+            {
+                xaxis = radius;
+                yaxis = radius;
+            }
+
+            else
+            {
+
+                 xaxis = Convert.ToInt32(result[1]);
+                yaxis = Convert.ToInt32(result[1]);
+            }
             Pen p = new Pen(Color.Red, 4);
             graph.DrawEllipse(p, x_axis, y_axis, xaxis, yaxis);
         }
